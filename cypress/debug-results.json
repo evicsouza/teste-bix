@@ -1,0 +1,120 @@
+[
+  {
+    "test": "products_endpoint",
+    "status": 200,
+    "body": {
+      "items": [
+        {
+          "id": 1,
+          "name": "Keyboard",
+          "price": 199.9,
+          "stock": 15
+        },
+        {
+          "id": 2,
+          "name": "Mouse",
+          "price": 99.5,
+          "stock": 25
+        },
+        {
+          "id": 3,
+          "name": "Headset",
+          "price": 299,
+          "stock": 8
+        }
+      ]
+    }
+  },
+  {
+    "test": "checkout_payload_1",
+    "description": "Estrutura original - items com productId",
+    "payload": {
+      "items": [
+        {
+          "productId": 1,
+          "quantity": 1
+        }
+      ]
+    },
+    "status": 400,
+    "body": {
+      "error": "Product undefined not found"
+    }
+  },
+  {
+    "test": "checkout_payload_2",
+    "description": "Items com id instead of productId",
+    "payload": {
+      "items": [
+        {
+          "id": 1,
+          "quantity": 1
+        }
+      ]
+    },
+    "status": 400,
+    "body": {
+      "error": "Invalid quantity"
+    }
+  },
+  {
+    "test": "checkout_payload_3",
+    "description": "Products instead of items",
+    "payload": {
+      "products": [
+        {
+          "productId": 1,
+          "quantity": 1
+        }
+      ]
+    },
+    "status": 400,
+    "body": {
+      "error": "Items are required"
+    }
+  },
+  {
+    "test": "checkout_payload_4",
+    "description": "Products with id",
+    "payload": {
+      "products": [
+        {
+          "id": 1,
+          "quantity": 1
+        }
+      ]
+    },
+    "status": 400,
+    "body": {
+      "error": "Items are required"
+    }
+  },
+  {
+    "test": "checkout_payload_5",
+    "description": "OrderItems instead of items",
+    "payload": {
+      "orderItems": [
+        {
+          "productId": 1,
+          "quantity": 1
+        }
+      ]
+    },
+    "status": 400,
+    "body": {
+      "error": "Items are required"
+    }
+  },
+  {
+    "test": "checkout_payload_6",
+    "description": "Sem array - objeto direto",
+    "payload": {
+      "productId": 1,
+      "quantity": 1
+    },
+    "status": 400,
+    "body": {
+      "error": "Items are required"
+    }
+  }
+]

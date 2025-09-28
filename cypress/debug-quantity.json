@@ -1,0 +1,153 @@
+[
+  {
+    "test": "quantity_test_0",
+    "quantity": 0,
+    "quantity_type": "number",
+    "status": 400,
+    "body": {
+      "error": "Invalid quantity"
+    }
+  },
+  {
+    "test": "quantity_test_1",
+    "quantity": 1,
+    "quantity_type": "number",
+    "status": 400,
+    "body": {
+      "error": "Invalid quantity"
+    }
+  },
+  {
+    "test": "quantity_test_2",
+    "quantity": 2,
+    "quantity_type": "number",
+    "status": 400,
+    "body": {
+      "error": "Invalid quantity"
+    }
+  },
+  {
+    "test": "quantity_test_3",
+    "quantity": 5,
+    "quantity_type": "number",
+    "status": 400,
+    "body": {
+      "error": "Invalid quantity"
+    }
+  },
+  {
+    "test": "quantity_test_4",
+    "quantity": 10,
+    "quantity_type": "number",
+    "status": 400,
+    "body": {
+      "error": "Invalid quantity"
+    }
+  },
+  {
+    "test": "quantity_test_5",
+    "quantity": -1,
+    "quantity_type": "number",
+    "status": 400,
+    "body": {
+      "error": "Invalid quantity"
+    }
+  },
+  {
+    "test": "quantity_test_6",
+    "quantity": 0.5,
+    "quantity_type": "number",
+    "status": 400,
+    "body": {
+      "error": "Invalid quantity"
+    }
+  },
+  {
+    "test": "quantity_test_7",
+    "quantity": "1",
+    "quantity_type": "string",
+    "status": 400,
+    "body": {
+      "error": "Invalid quantity"
+    }
+  },
+  {
+    "test": "quantity_test_8",
+    "quantity": "abc",
+    "quantity_type": "string",
+    "status": 400,
+    "body": {
+      "error": "Invalid quantity"
+    }
+  },
+  {
+    "test": "structure_test_0",
+    "description": "Items com id e quantity positiva",
+    "payload": {
+      "items": [
+        {
+          "id": 1,
+          "quantity": 2
+        }
+      ]
+    },
+    "status": 400,
+    "body": {
+      "error": "Invalid quantity"
+    }
+  },
+  {
+    "test": "structure_test_1",
+    "description": "Items com múltiplos produtos",
+    "payload": {
+      "items": [
+        {
+          "id": 1,
+          "quantity": 2
+        },
+        {
+          "id": 2,
+          "quantity": 1
+        }
+      ]
+    },
+    "status": 400,
+    "body": {
+      "error": "Invalid quantity"
+    }
+  },
+  {
+    "test": "structure_test_2",
+    "description": "Items com coupon",
+    "payload": {
+      "items": [
+        {
+          "id": 1,
+          "quantity": 2
+        }
+      ],
+      "coupon": "WELCOME10"
+    },
+    "status": 400,
+    "body": {
+      "error": "Invalid quantity"
+    }
+  },
+  {
+    "test": "structure_test_3",
+    "description": "Items com userId (se necessário)",
+    "payload": {
+      "items": [
+        {
+          "id": 1,
+          "quantity": 2
+        }
+      ],
+      "userId": 1
+    },
+    "status": 400,
+    "body": {
+      "error": "Invalid quantity"
+    }
+  }
+]
